@@ -1,0 +1,421 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* ─── DESIGN TOKENS ─────────────────────────────────────── */
+:root {
+  --yellow:     #E8FF00;
+  --yellow-dim: #c4d900;
+  --cyan:       #00D4CC;
+  --cyan-dim:   #009e99;
+  --red:        #FF3B3B;
+  --red-dim:    #cc1f1f;
+  --bg:         #111111;
+  --bg-panel:   #1a1a1a;
+  --bg-panel-2: #222222;
+  --bg-panel-3: #2a2a2a;
+  --border:     rgba(255,255,255,0.07);
+  --border-2:   rgba(255,255,255,0.12);
+  --text:       #ffffff;
+  --text-muted: #888888;
+  --text-dim:   #444444;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+  --font-body:    'Space Grotesk', sans-serif;
+}
+
+/* ─── RESET & BASE ──────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: var(--yellow); }
+
+/* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+.font-display { font-family: var(--font-display) !important; }
+.font-mono    { font-family: var(--font-mono) !important; }
+
+/* ─── ANIMATIONS ─────────────────────────────────────────── */
+@keyframes scanline-move {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+@keyframes flicker {
+  0%, 92%, 100% { opacity: 1; }
+  93%            { opacity: 0.6; }
+  95%            { opacity: 0.9; }
+  97%            { opacity: 0.5; }
+}
+@keyframes glitch-h {
+  0%   { clip-path: inset(80% 0 0 0);    transform: translate(-4px); }
+  20%  { clip-path: inset(10% 0 60% 0);  transform: translate(4px); }
+  40%  { clip-path: inset(50% 0 30% 0);  transform: translate(-2px); }
+  60%  { clip-path: inset(30% 0 50% 0);  transform: translate(2px); }
+  80%  { clip-path: inset(5%  0 90% 0);  transform: translate(-4px); }
+  100% { clip-path: inset(50% 0 20% 0);  transform: translate(0); }
+}
+@keyframes segment-fill {
+  from { width: 0; }
+  to   { width: var(--target-w); }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  15%       { transform: translateX(-8px) rotate(-1deg); }
+  30%       { transform: translateX(8px)  rotate(1deg); }
+  45%       { transform: translateX(-5px); }
+  60%       { transform: translateX(5px); }
+  75%       { transform: translateX(-2px); }
+  90%       { transform: translateX(2px); }
+}
+@keyframes slide-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pulse-yellow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232,255,0,0); }
+  50%       { box-shadow: 0 0 0 6px rgba(232,255,0,0.08); }
+}
+@keyframes border-march {
+  0%   { background-position: 0 0, 100% 0, 100% 100%, 0 100%; }
+  100% { background-position: 100% 0, 100% 100%, 0 100%, 0 0; }
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes noise {
+  0%,100% { transform: translate(0,0); }
+  10%  { transform: translate(-1%,-1%); }
+  20%  { transform: translate(1%,1%); }
+  30%  { transform: translate(-2%,0); }
+  40%  { transform: translate(2%,-1%); }
+  50%  { transform: translate(0,2%); }
+}
+
+/* ─── GLOBAL SCANLINES LAYER ─────────────────────────────── */
+.scanlines::after {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 9997;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.04) 0px,
+    rgba(0,0,0,0.04) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* ─── COMPONENT STYLES ───────────────────────────────────── */
+
+/* — Panels — */
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+}
+.panel-2 {
+  background: var(--bg-panel-2);
+  border: 1px solid var(--border);
+}
+.panel-accent-yellow {
+  border-left: 3px solid var(--yellow);
+  background: var(--bg-panel);
+}
+.panel-accent-cyan {
+  border-left: 3px solid var(--cyan);
+  background: var(--bg-panel);
+}
+.panel-accent-red {
+  border-left: 3px solid var(--red);
+  background: var(--bg-panel);
+}
+
+/* — System labels — */
+.sys-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.sys-label-yellow {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+.sys-label-muted {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* — Display headings (Bebas Neue) — */
+.display-xl  { font-family: var(--font-display); font-size: clamp(4rem, 12vw, 9rem); line-height: 0.92; letter-spacing: 0.02em; }
+.display-lg  { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 5rem);  line-height: 0.95; letter-spacing: 0.02em; }
+.display-md  { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 3rem);  line-height: 1;    letter-spacing: 0.02em; }
+.display-sm  { font-family: var(--font-display); font-size: 1.4rem;  line-height: 1;    letter-spacing: 0.04em; }
+
+/* — Buttons — */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--yellow);
+  color: #000;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+.btn-primary:hover  { background: #fff; }
+.btn-primary:active { transform: scale(0.97); }
+
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent;
+  color: var(--yellow);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 11px 22px;
+  border: 1px solid var(--yellow);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-outline:hover { background: var(--yellow); color: #000; }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border: 1px solid var(--border-2);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-ghost:hover { border-color: var(--text-muted); color: var(--text); }
+
+.btn-cyan {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent;
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border: 1px solid var(--cyan);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-cyan:hover { background: var(--cyan); color: #000; }
+
+/* — Inputs — */
+.sys-input {
+  width: 100%;
+  background: var(--bg-panel-2);
+  border: 1px solid var(--border-2);
+  border-radius: 2px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 14px 18px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.04em;
+}
+.sys-input:focus {
+  border-color: var(--yellow);
+  box-shadow: 0 0 0 1px var(--yellow);
+}
+.sys-input::placeholder { color: var(--text-dim); }
+
+/* — Segmented block bar — */
+.block-bar {
+  display: flex;
+  gap: 3px;
+}
+.block-bar-segment {
+  flex: 1;
+  height: 14px;
+  border-radius: 1px;
+  transition: background 0.4s ease;
+}
+
+/* — Tag badges — */
+.tag-red {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  border: 1px solid var(--red);
+  padding: 3px 8px;
+  border-radius: 1px;
+}
+.tag-yellow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000;
+  background: var(--yellow);
+  padding: 3px 8px;
+  border-radius: 1px;
+}
+.tag-cyan {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  border: 1px solid var(--cyan);
+  padding: 3px 8px;
+  border-radius: 1px;
+}
+
+/* — Glitch effect — */
+.glitch-layer {
+  position: absolute; inset: 0;
+  pointer-events: none;
+}
+.glitch-layer::before,
+.glitch-layer::after {
+  content: attr(data-text);
+  position: absolute; top: 0; left: 0; width: 100%;
+  font-family: var(--font-display);
+  color: transparent;
+  animation: glitch-h 3s infinite;
+}
+.glitch-layer::before { color: var(--cyan); animation-delay: 0s; }
+.glitch-layer::after  { color: var(--yellow); animation-delay: 0.15s; opacity: 0.7; }
+
+/* — Teal hero scanline bg — */
+.hero-scanlines {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,212,204,0.03) 0px,
+      rgba(0,212,204,0.03) 1px,
+      transparent 1px,
+      transparent 8px
+    ),
+    var(--bg-panel);
+}
+
+/* — Ticker tape — */
+.ticker-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.ticker-inner {
+  display: inline-block;
+  animation: ticker 20s linear infinite;
+}
+
+/* — Card hover — */
+.card-sys {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  transition: border-color 0.2s, background 0.2s;
+  cursor: pointer;
+}
+.card-sys:hover {
+  border-color: var(--yellow);
+  background: var(--bg-panel-2);
+}
+.card-sys.active {
+  border-color: var(--yellow);
+  background: rgba(232,255,0,0.04);
+}
+
+/* — Divider — */
+.sys-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+/* — Link arrow — */
+.link-arrow {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.link-arrow:hover { color: #fff; }
+
+/* — Warning icon — */
+.warn-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px;
+  border: 1px solid var(--red);
+  border-radius: 1px;
+  color: var(--red);
+  font-size: 0.6rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* — Shake utility — */
+.shake { animation: shake 0.5s ease-in-out; }
+
+/* — Stat row — */
+.stat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.stat-row:last-child { border-bottom: none; }

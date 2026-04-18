@@ -1,0 +1,357 @@
+{
+  "scenarios": [
+    {
+      "id": "exam_tomorrow",
+      "category": "📚 Exams",
+      "situation": "Exam tomorrow morning. You haven't studied anything.",
+      "choices": [
+        {
+          "id": "netflix",
+          "label": "Start a new Netflix series 🎬",
+          "emoji": "🎬",
+          "immediate": "You start 'Dark'. Just one episode, you said.",
+          "tomorrow": "You've watched 6 episodes. Exam starts in 2 hours. You open your book and cry.",
+          "oneMonth": "You failed. You're now a Netflix recommendation algorithm expert. Applying for influencer jobs.",
+          "statChanges": { "academics": -25, "sleep": -20, "focus": -30, "regret": 20, "mentalHealth": -10 },
+          "chaosIncrease": 20,
+          "narratorLines": {
+            "savage": "Incredible. Absolutely galaxy-brained strategy. You'll study in hell.",
+            "motivational": "You're investing in cultural knowledge! (You're cooked.)",
+            "emotional": "Oh no... oh sweetheart, no..."
+          }
+        },
+        {
+          "id": "room_reorganize",
+          "label": "Reorganize your entire room 🧹",
+          "emoji": "🧹",
+          "immediate": "You start 'just moving the desk'. 4 hours later you're buying new shelves on Amazon.",
+          "tomorrow": "Clean room. Zero knowledge. 100% vibes. You walk into the exam hall with immaculate energy and no answers.",
+          "oneMonth": "You failed but your room looks stunning. Interior design career incoming.",
+          "statChanges": { "academics": -30, "sleep": -15, "focus": -20, "regret": 25, "mentalHealth": -5 },
+          "chaosIncrease": 18,
+          "narratorLines": {
+            "savage": "Priorities: room aesthetic > passing semester. Respect, honestly.",
+            "motivational": "A clean space = a clear mind! (That won't help with derivatives.)",
+            "emotional": "You were avoiding it... we all knew it..."
+          }
+        },
+        {
+          "id": "dangerous_nap",
+          "label": "Take a 5 min nap 😴 (dangerous)",
+          "emoji": "😴",
+          "immediate": "You set 4 alarms. You sleep through all of them with zero hesitation.",
+          "tomorrow": "You wake up at 11am. Exam was at 9am. You stare at the ceiling for 40 minutes.",
+          "oneMonth": "You missed the exam. The professor knows your name now but not in a good way. You explain 'the nap' to your parents.",
+          "statChanges": { "academics": -35, "sleep": 10, "focus": -25, "regret": 35, "mentalHealth": -20 },
+          "chaosIncrease": 25,
+          "narratorLines": {
+            "savage": "5 minutes. Sure. 5 minutes into what dimension exactly?",
+            "motivational": "Rest is productive! You're just... very productive. Too productive.",
+            "emotional": "The alarms were right there... they tried to save you..."
+          }
+        }
+      ]
+    },
+    {
+      "id": "crush_text",
+      "category": "💌 Crush",
+      "situation": "Your crush just texted 'hey' at 11pm. This is your moment.",
+      "choices": [
+        {
+          "id": "overthink_reply",
+          "label": "Spend 45 mins drafting the perfect reply ✍️",
+          "emoji": "✍️",
+          "immediate": "You've written and deleted 12 versions. Your friends are reviewing draft #8.",
+          "tomorrow": "You sent 'hey!' back. They replied 'lol' and went offline. Your soul left your body.",
+          "oneMonth": "You're still analyzing what 'lol' meant. You made a spreadsheet.",
+          "statChanges": { "academics": -5, "sleep": -20, "focus": -35, "regret": 30, "mentalHealth": -25 },
+          "chaosIncrease": 22,
+          "narratorLines": {
+            "savage": "45 minutes. For 'hey'. You absolute unit.",
+            "motivational": "Preparation is key! (They're asleep now.)",
+            "emotional": "Every word matters... you just needed the RIGHT words... it's okay..."
+          }
+        },
+        {
+          "id": "send_meme",
+          "label": "Send a meme instead of replying 🐸",
+          "emoji": "🐸",
+          "immediate": "You sent a frog meme. No context. At 11:43pm.",
+          "tomorrow": "They screenshot it and sent it to their friends. You're now known as 'frog person'.",
+          "oneMonth": "They call you frog person affectionately now. This might actually be working.",
+          "statChanges": { "academics": 0, "sleep": -10, "focus": -15, "regret": 15, "mentalHealth": 5 },
+          "chaosIncrease": 12,
+          "narratorLines": {
+            "savage": "That's genuinely your best move. Somehow.",
+            "motivational": "Authenticity is attractive! Probably!",
+            "emotional": "You were scared... so you chose chaos... relatable..."
+          }
+        },
+        {
+          "id": "confess",
+          "label": "Confess your feelings immediately 💀",
+          "emoji": "💀",
+          "immediate": "You sent a 4-paragraph feelings essay. Unedited. At midnight.",
+          "tomorrow": "They left you on 'seen' for 14 hours. You check your phone every 30 seconds.",
+          "oneMonth": "They said 'i think of you as a friend'. You're processing it with a therapist.",
+          "statChanges": { "academics": -10, "sleep": -30, "focus": -40, "regret": 40, "mentalHealth": -35 },
+          "chaosIncrease": 30,
+          "narratorLines": {
+            "savage": "You didn't hesitate. You didn't think. You DEPLOYED. Respect and condolences.",
+            "motivational": "Vulnerability is strength! (please get off your phone.)",
+            "emotional": "Oh... oh no... oh you brave, foolish soul..."
+          }
+        }
+      ]
+    },
+    {
+      "id": "group_project",
+      "category": "👥 Group Project",
+      "situation": "Group project due in 3 days. Nobody has started. You're the smart one.",
+      "choices": [
+        {
+          "id": "do_it_yourself",
+          "label": "Do the entire project yourself 😤",
+          "emoji": "😤",
+          "immediate": "You work for 9 hours straight. Your groupmates are posting reels.",
+          "tomorrow": "You submit it. Everyone gets the same grade. One teammate says 'thanks bro, great teamwork'.",
+          "oneMonth": "You're in therapy unpacking a deep hatred of group work. Self-diagnosis: control issues.",
+          "statChanges": { "academics": 10, "sleep": -30, "focus": -10, "regret": 25, "mentalHealth": -30 },
+          "chaosIncrease": 15,
+          "narratorLines": {
+            "savage": "Martyrdom is a choice. You chose it enthusiastically.",
+            "motivational": "Teamwork means one team, one worker! That worker is you!",
+            "emotional": "You just... wanted it done right... you deserved better teammates..."
+          }
+        },
+        {
+          "id": "ghost_group",
+          "label": "Ghost the group chat 👻",
+          "emoji": "👻",
+          "immediate": "You mute the group. 47 unread messages. You watch their panic with detached serenity.",
+          "tomorrow": "They submitted something. You don't know what. The professor sends you an individual email.",
+          "oneMonth": "You got a D. Your groupmates got a C. Nobody is speaking to anyone. Beautiful chaos.",
+          "statChanges": { "academics": -30, "sleep": 10, "focus": -20, "regret": 35, "mentalHealth": 0 },
+          "chaosIncrease": 28,
+          "narratorLines": {
+            "savage": "The digital disappearing act. Cold-blooded. Legendary. Terrible.",
+            "motivational": "Boundaries are healthy! (Academic suicide is not.)",
+            "emotional": "You just... couldn't face it... I understand... I'm worried..."
+          }
+        },
+        {
+          "id": "last_minute_zoom",
+          "label": "Call emergency Zoom at midnight 🕛",
+          "emoji": "🕛",
+          "immediate": "Nobody joins for 25 minutes. Then one person shows up eating a sandwich.",
+          "tomorrow": "You produce something that technically counts as a project. The formatting is chaotic. The font is Comic Sans.",
+          "oneMonth": "You passed. Nobody remembers how. The Comic Sans slide is a meme in your class.",
+          "statChanges": { "academics": -10, "sleep": -25, "focus": -15, "regret": 10, "mentalHealth": -15 },
+          "chaosIncrease": 18,
+          "narratorLines": {
+            "savage": "Comic Sans. Under pressure. In university. Iconic.",
+            "motivational": "Late start but you STARTED! Also why is the font Comic Sans.",
+            "emotional": "The sandwich... the silence... the font... it's a lot..."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sleep_cycle",
+      "category": "😴 Sleep",
+      "situation": "It's 3am. You have class at 9. You're not even slightly sleepy.",
+      "choices": [
+        {
+          "id": "scroll_tiktok",
+          "label": "Scroll TikTok until you pass out 📱",
+          "emoji": "📱",
+          "immediate": "You go in for '5 minutes'. Your recommended page knows your entire personality.",
+          "tomorrow": "You wake up with your phone on your face, battery at 3%, and a deep spiritual emptiness.",
+          "oneMonth": "You've watched 847 videos. You know every sound. You know nothing else. Algorithm complete.",
+          "statChanges": { "academics": -15, "sleep": -30, "focus": -35, "regret": 20, "mentalHealth": -15 },
+          "chaosIncrease": 20,
+          "narratorLines": {
+            "savage": "The algorithm won. It always wins. You never had a chance.",
+            "motivational": "You're learning! About cats! And life hacks! And oh no it's 6am.",
+            "emotional": "You didn't even enjoy most of them... you just... couldn't stop..."
+          }
+        },
+        {
+          "id": "existential_spiral",
+          "label": "Start an existential crisis 🌌",
+          "emoji": "🌌",
+          "immediate": "You begin thinking about whether your choices define you or circumstance does. It's 3am.",
+          "tomorrow": "You didn't sleep. You have opinions about Nietzsche now. Class was at 9. You were not there.",
+          "oneMonth": "You're reading philosophy books and alienating your friends. 'Have you considered that time is fake?'",
+          "statChanges": { "academics": -20, "sleep": -35, "focus": -20, "regret": 25, "mentalHealth": -40 },
+          "chaosIncrease": 35,
+          "narratorLines": {
+            "savage": "You chose to 3am-philosophy-brain instead of sleep. Peak human behavior.",
+            "motivational": "Intellectual curiosity is great! Also you have 3 missed calls from your mom.",
+            "emotional": "The questions haunt you... they always have... since childhood, even..."
+          }
+        },
+        {
+          "id": "fake_alarm",
+          "label": "Set 12 alarms and hope for the best ⏰",
+          "emoji": "⏰",
+          "immediate": "You feel strangely at peace. The alarms will handle it. You are at one with chaos.",
+          "tomorrow": "You slept through alarms 1-11. Alarm 12 jolted you at 8:58am. You ran to class in pajamas.",
+          "oneMonth": "Your body now pre-panics at 8:45am. It's a trauma response. You call it 'efficiency'.",
+          "statChanges": { "academics": -5, "sleep": -20, "focus": -10, "regret": 15, "mentalHealth": -20 },
+          "chaosIncrease": 15,
+          "narratorLines": {
+            "savage": "12 alarms. You set 12 and still almost missed it. Hall of fame.",
+            "motivational": "You MADE it! Sort of! In pajamas! Alive!",
+            "emotional": "The alarm panic... the running... your body remembers..."
+          }
+        }
+      ]
+    },
+    {
+      "id": "phone_addiction",
+      "category": "📱 Phone",
+      "situation": "You promised yourself: only 30 minutes of phone time today.",
+      "choices": [
+        {
+          "id": "one_more_reel",
+          "label": "One more reel before putting it down 🎞️",
+          "emoji": "🎞️",
+          "immediate": "3 hours later. Your thumb is numb. Your brain is a smoothie.",
+          "tomorrow": "You have absolutely nothing to show for the last 3 hours of your life. Nothing.",
+          "oneMonth": "Screen time report: 9 hours/day average. You cry reading it then immediately open Instagram.",
+          "statChanges": { "academics": -20, "sleep": -15, "focus": -40, "regret": 30, "mentalHealth": -20 },
+          "chaosIncrease": 22,
+          "narratorLines": {
+            "savage": "'One more'. THREE HOURS LATER. You're a joke and you know it.",
+            "motivational": "You're staying entertained! And informed! And empty inside!",
+            "emotional": "You didn't even want to watch... you just didn't know how to stop..."
+          }
+        },
+        {
+          "id": "doom_scroll_news",
+          "label": "Doom scroll news for 'awareness' 📰",
+          "emoji": "📰",
+          "immediate": "You're now aware of 14 global crises you can do nothing about. You feel worse.",
+          "tomorrow": "You bring up 7 different geopolitical issues at lunch. Your friends slowly stop inviting you.",
+          "oneMonth": "You have anxiety about things happening 9,000 miles away. Your local problems remain unsolved.",
+          "statChanges": { "academics": -5, "sleep": -25, "focus": -25, "regret": 20, "mentalHealth": -45 },
+          "chaosIncrease": 25,
+          "narratorLines": {
+            "savage": "Ah yes. The informed citizen who can't sleep and helps no one. Beautiful.",
+            "motivational": "Knowledge is power! And power gives you anxiety attacks! At 2am!",
+            "emotional": "The world feels so heavy... too heavy... please put the phone down..."
+          }
+        },
+        {
+          "id": "compare_instagram",
+          "label": "Stalk everyone's highlight reels on Instagram 📸",
+          "emoji": "📸",
+          "immediate": "Everyone is traveling, succeeding, and glowing. You are in bed. In the same position as yesterday.",
+          "tomorrow": "You feel inadequate about your life, body, and general existence.",
+          "oneMonth": "You restructure your entire life goals based on someone's curated vacation content. They were miserable on that trip.",
+          "statChanges": { "academics": -10, "sleep": -20, "focus": -35, "regret": 35, "mentalHealth": -50 },
+          "chaosIncrease": 28,
+          "narratorLines": {
+            "savage": "Comparing your behind-the-scenes to everyone's highlight reel. Classic self-sabotage.",
+            "motivational": "Inspiration is healthy! This is not that! This is the opposite!",
+            "emotional": "You just wanted to feel connected... instead you feel alone... I'm so sorry..."
+          }
+        }
+      ]
+    },
+    {
+      "id": "attendance",
+      "category": "🏫 Attendance",
+      "situation": "You have 65% attendance. Minimum required is 75%. Class is in 30 mins.",
+      "choices": [
+        {
+          "id": "skip_anyway",
+          "label": "Skip anyway, it's just one class 🛌",
+          "emoji": "🛌",
+          "immediate": "You're cozy in bed with zero regrets. The regrets come later.",
+          "tomorrow": "Turns out it was the class where professor announced internals details. You find out from a classmate who is very tired of you.",
+          "oneMonth": "Detained from exams. You're writing a heartfelt email to the HOD. They've seen this email before.",
+          "statChanges": { "academics": -40, "sleep": 15, "focus": -15, "regret": 45, "mentalHealth": -15 },
+          "chaosIncrease": 30,
+          "narratorLines": {
+            "savage": "65% and still skipping. You're playing Minecraft on nightmare mode.",
+            "motivational": "Self-care is important! Detention is also happening! At the same time!",
+            "emotional": "You knew... deep down you knew... and you skipped anyway..."
+          }
+        },
+        {
+          "id": "mark_proxy",
+          "label": "Ask a friend to mark proxy for you 🤫",
+          "emoji": "🤫",
+          "immediate": "Your friend hesitantly agrees. They're nervous. You are shameless.",
+          "tomorrow": "The professor does a spot check. Your friend is caught. They're not speaking to you.",
+          "oneMonth": "Proxy is officially marked. You and your friend had a two-week falling out. Was it worth it? (No.)",
+          "statChanges": { "academics": -15, "sleep": 10, "focus": -10, "regret": 30, "mentalHealth": -20 },
+          "chaosIncrease": 22,
+          "narratorLines": {
+            "savage": "You risked a friendship for attendance. The arc of moral complexity.",
+            "motivational": "Teamwork makes the dream work! This isn't teamwork! This is a crime!",
+            "emotional": "They trusted you... and you handed them that risk..."
+          }
+        },
+        {
+          "id": "go_but_sleep",
+          "label": "Go to class but sleep there 😪",
+          "emoji": "😪",
+          "immediate": "You attend physically. Mentally, you are in a field somewhere peaceful.",
+          "tomorrow": "Professor calls on you mid-sleep. You say something that makes the whole class go quiet.",
+          "oneMonth": "Your answer ('the mitochondria is the powerhouse of feelings') became a class meme. You're famous for the wrong reasons.",
+          "statChanges": { "academics": -10, "sleep": 5, "focus": -20, "regret": 15, "mentalHealth": 0 },
+          "chaosIncrease": 12,
+          "narratorLines": {
+            "savage": "Present. Unconscious. Technically compliant. Respect.",
+            "motivational": "You showed up! Your body did anyway! The rest will figure itself out!",
+            "emotional": "At least you tried... in your own way... you really did try..."
+          }
+        }
+      ]
+    }
+  ],
+  "chaosEvents": [
+    { "id": "surprise_test", "text": "⚡ SURPRISE TEST TOMORROW", "subtext": "Your professor just announced it on the group. 11:47pm.", "chaos": 15 },
+    { "id": "crush_seen", "text": "👀 CRUSH SAW YOUR MESSAGE", "subtext": "3 hours ago. No reply. Still watching.", "chaos": 20 },
+    { "id": "wifi_down", "text": "📶 WIFI IS DOWN", "subtext": "At the most critical moment possible. Naturally.", "chaos": 10 },
+    { "id": "mom_calling", "text": "📞 MOM IS CALLING", "subtext": "She knows. She always knows.", "chaos": 12 },
+    { "id": "attendance_warning", "text": "🚨 ATTENDANCE WARNING EMAIL", "subtext": "From the professor directly. With your name spelled correctly.", "chaos": 18 },
+    { "id": "groupchat", "text": "💬 72 NEW MESSAGES IN GROUP CHAT", "subtext": "About the project. That was due yesterday.", "chaos": 16 },
+    { "id": "phone_battery", "text": "🔋 BATTERY AT 3%", "subtext": "No charger in sight. This is the end.", "chaos": 8 },
+    { "id": "deadline", "text": "⏰ SUBMISSION PORTAL CLOSES IN 2 HOURS", "subtext": "The assignment you forgot existed.", "chaos": 25 }
+  ],
+  "alternateUniverseLines": [
+    "In another universe, you studied and actually understood the material.",
+    "In another universe, you slept at 11pm and woke up refreshed.",
+    "In another universe, you replied 'hey' back and it led somewhere beautiful.",
+    "In another universe, you opened the textbook before the night before.",
+    "In another universe, your group project was collaborative. Willingly.",
+    "In another universe, you put the phone down and read a book.",
+    "In another universe, you asked for help before it was too late.",
+    "In another universe, you're the person your current self checks Instagram to envy."
+  ],
+  "finalTitles": [
+    { "minChaos": 90, "title": "Certified Life Ruiner 💀", "subtitle": "You've mastered the art of self-destruction." },
+    { "minChaos": 75, "title": "Overthinking Champion 🧠", "subtitle": "Your brain is a problem, not a solution." },
+    { "minChaos": 60, "title": "Certified Procrastinator 📅", "subtitle": "Later is now, and now is too late." },
+    { "minChaos": 40, "title": "Professional Avoider 👻", "subtitle": "You ghost your responsibilities like an ex." },
+    { "minChaos": 0, "title": "Amateur Disaster 🤕", "subtitle": "You tried to ruin your life. It's a start." }
+  ],
+  "overthinkingThoughts": [
+    "Why did I do that...",
+    "I had potential. People believed in me.",
+    "Everyone else is figuring it out.",
+    "It's 3am and I'm spiraling. Normal.",
+    "What if I just... started fresh? Tomorrow? No wait, Monday.",
+    "I should make a plan. I'll make a plan about making a plan.",
+    "Maybe I'm not built for this.",
+    "No wait, I'm actually fine. Am I fine? I'm not fine.",
+    "Is everyone else also this chaotic or is it just me.",
+    "It's over. It was over before it began.",
+    "I peaked in 8th grade. This is the decline.",
+    "I need to hydrate. I haven't hydrated. This is why things are bad."
+  ]
+}
